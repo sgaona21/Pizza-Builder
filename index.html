@@ -12,5 +12,54 @@
 </head>
 <body>
     <h1>Pizza Builder</h1>
+        <h2>Create New Pizza</h2>
+            <form>
+                <h3>Size:</h2>
+                    <div>
+                    <input type="radio" id="small" value="size_small" name="size">
+                    <label for="small">Small</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="medium" value="pizza_medium" name="size">
+                    <label for="medium">Medium</label>
+                    </div>
+                    <div>
+                    <input type="radio" id="large" value="pizza_large" name="size">
+                    <label for="large">Large</label>
+                    </div>
+
+                    <h3>Crust:</h2>
+                        <div>
+                        <input type="radio" id="thin" value="thin_crust" name="crust">
+                        <label for="thin">Thin</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="original" value="crust_original" name="crust">
+                        <label for="original">Original</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="pan" value="crust_pan" name="crust">
+                        <label for="pan">Pan</label>
+                        </div>
+
+                    <h3>Toppings:</h2>
+                        <div>
+                        <input type="checkbox" id="pepperoni" value="topping_pepperoni" name="toppings">
+                        <label for="pepperoni">Pepperoni</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="sausage" value="topping_sausage" name="toppings">
+                        <label for="sausage">Sausage</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="mushroom" value="topping_mushroom" name="toppings">
+                        <label for="mushroom">Mushroom</label>
+                        </div>    
+
+                        <input type="submit" id="save" value="Save">
+                </form>
+        <h2>My Pizzas</h2>        
+
+
 </body>
 </html>
