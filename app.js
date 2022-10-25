@@ -30,6 +30,19 @@ let toppingsArray = [];
 form.addEventListener("submit", (e) => {
     // e.preventDefault();
     newPizza.toppings = toppingsArray;
+    
+    if (small.checked === false && medium.checked === false && large.checked === false) {
+      alert("Please Select a Size");
+      e.preventDefault()
+    }
+    else if (thin.checked === false && original.checked === false && pan.checked === false) {
+      alert("Please Select a Crust");
+      e.preventDefault()
+    } else if (pepperoni.checked === false && sausage.checked === false && mushroom.checked === false) {
+      alert("Please Select a Topping");  
+      e.preventDefault()
+    }
+    else {
     if(small.checked === true) {
       newPizza.size = "small";
     }
@@ -39,7 +52,7 @@ form.addEventListener("submit", (e) => {
     if (large.checked === true) {
         newPizza.size = "large";
     }
-    if(thin.checked === true) {
+    if (thin.checked === true) {
         newPizza.crust = "thin";
       }
       if (original.checked === true) {
@@ -58,9 +71,11 @@ form.addEventListener("submit", (e) => {
         toppingsArray.push("mushroom");
       }
 
+
       let newPizzaString = JSON.stringify(newPizza);
       localStorage.setItem("Pizza1", newPizzaString);
 
+    }
 });
 
 
@@ -91,11 +106,47 @@ pizza1EditButton.addEventListener("click", () => {
   pizza1Form.style.display = "block";
   pizza1DeleteButton.style.display = "none";
   pizza1EditButton.style.display = "none";
+
+  if (pizza1Conversion.size === "small") {
+      small1.checked = true
+  }
+  if (pizza1Conversion.size === "medium") {
+      medium1.checked = true
+  }
+  if (pizza1Conversion.size === "large") {
+      large1.checked = true
+  }
+  if (pizza1Conversion.crust === "thin") {
+    thin1.checked = true
+  }
+  if (pizza1Conversion.crust === "original") {
+      original1.checked = true
+  }
+  if (pizza1Conversion.crust === "pan") {
+      pan1.checked = true
+  }
+  if (pizza1Conversion.toppings.includes("pepperoni")) {
+    pepperoni1.checked = true
+  }
+  if (pizza1Conversion.toppings.includes("sausage")) {
+      sausage1.checked = true
+  }
+  if (pizza1Conversion.toppings.includes("mushroom")) {
+      mushroom1.checked = true
+  }
+
+  
 });
 
-pizza1SaveButton.addEventListener("click", () => {
+pizza1SaveButton.addEventListener("click", (e) => {
   newPizza.toppings = toppingsArray;
-    if(small1.checked === true) {
+
+    if (pepperoni1.checked === false && sausage1.checked === false && mushroom1.checked === false) {
+      alert("Please Select a Topping"); 
+      e.preventDefault(); 
+    } 
+    
+    if (small1.checked === true) {
       newPizza.size = "small";
     }
     if (medium1.checked === true) {
@@ -126,13 +177,6 @@ pizza1SaveButton.addEventListener("click", () => {
       let newPizzaString = JSON.stringify(newPizza);
       localStorage.setItem("Pizza1", newPizzaString);
 });
-
-
-
-
-
-
-
 
 
 
