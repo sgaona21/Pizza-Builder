@@ -27,7 +27,7 @@ class Pizza {
 let newPizza  = new Pizza(null, null, null);
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     let toppingsArray = [];
     newPizza.toppings = toppingsArray;
     if(small.checked === true) {
@@ -61,30 +61,31 @@ form.addEventListener("submit", (e) => {
 
       let newPizzaString = JSON.stringify(newPizza);
       localStorage.setItem("newPizza", newPizzaString)
-      console.log(localStorage)
 
 });
-
-
 const pizza1 = document.createElement("h4");
 const pizzaType = document.createElement("p");
 const editButton = document.createElement("button");
 const deleteButton = document.createElement("button");
 
+
+let newPizzaUntied = JSON.parse(localStorage.getItem("newPizza"))
+
 deleteButton.textContent = "Delete";
 editButton.textContent = "Edit";
-pizzaType.textContent = "medium, original, pepperoni";
-pizza1.textContent = "Pizza 1:";
+pizzaType.textContent = `${newPizzaUntied.size}, ${newPizzaUntied.crust}, ${newPizzaUntied.toppings}`;
+pizza1.textContent = "Pizza 1";
 
 mySavedPizzas.appendChild(pizza1);
 mySavedPizzas.appendChild(pizzaType);
 mySavedPizzas.appendChild(editButton)
 mySavedPizzas.appendChild(deleteButton);
 
-console.log(newPizza)
 
-console.log(localStorage);
 
+
+
+console.log(localStorage)
 
 
 
