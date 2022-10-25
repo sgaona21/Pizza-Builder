@@ -25,14 +25,13 @@ class Pizza {
 }
 
 let newPizza  = new Pizza(null, null, null);
+let toppingsArray = [];
 
 form.addEventListener("submit", (e) => {
     // e.preventDefault();
-    let toppingsArray = [];
     newPizza.toppings = toppingsArray;
     if(small.checked === true) {
       newPizza.size = "small";
-      console.log(newPizza)
     }
     if (medium.checked === true) {
         newPizza.size = "medium";
@@ -60,31 +59,84 @@ form.addEventListener("submit", (e) => {
       }
 
       let newPizzaString = JSON.stringify(newPizza);
-      localStorage.setItem("newPizza", newPizzaString)
+      localStorage.setItem("Pizza1", newPizzaString);
 
 });
-const pizza1 = document.createElement("h4");
-const pizzaType = document.createElement("p");
-const editButton = document.createElement("button");
-const deleteButton = document.createElement("button");
 
 
-let newPizzaUntied = JSON.parse(localStorage.getItem("newPizza"))
+const pizza1 = document.getElementById("pizza-1");
+const pizza1h4 = document.getElementById("pizza-1-h4");
+const pizza1p = document.getElementById("pizza-1-p");
+const pizza1Storage = JSON.parse(localStorage.getItem("newPizza"))
+const pizza1Form = document.getElementById("pizza-1-form");
+const pizza1SaveButton = document.getElementById("save-1");
+let pizza1Conversion = JSON.parse(localStorage.getItem("Pizza1"));
 
-deleteButton.textContent = "Delete";
-editButton.textContent = "Edit";
-pizzaType.textContent = `${newPizzaUntied.size}, ${newPizzaUntied.crust}, ${newPizzaUntied.toppings}`;
-pizza1.textContent = "Pizza 1";
 
-mySavedPizzas.appendChild(pizza1);
-mySavedPizzas.appendChild(pizzaType);
-mySavedPizzas.appendChild(editButton)
-mySavedPizzas.appendChild(deleteButton);
+if (localStorage.Pizza1 != null) {
+  pizza1.style.display = "block";
+  pizza1h4.textContent = "Pizza 1";
+  pizza1p.textContent = `${pizza1Conversion.size}, ${pizza1Conversion.crust}, ${pizza1Conversion.toppings}`;
+};
 
-deleteButton.addEventListener("click", () => {
-    localStorage.removeItem("newPizza");
-    window.location.reload();
-})
+const pizza1EditButton = document.getElementById("pizza-1-edit");
+const pizza1DeleteButton = document.getElementById("pizza-1-delete");
+
+pizza1DeleteButton.addEventListener("click", () => {
+  localStorage.removeItem("Pizza1");
+  location.reload();
+});
+
+pizza1EditButton.addEventListener("click", () => {
+  pizza1Form.style.display = "block";
+  pizza1DeleteButton.style.display = "none";
+  pizza1EditButton.style.display = "none";
+});
+
+pizza1SaveButton.addEventListener("click", () => {
+  newPizza.toppings = toppingsArray;
+    if(small1.checked === true) {
+      newPizza.size = "small";
+    }
+    if (medium1.checked === true) {
+        newPizza.size = "medium";
+    }
+    if (large1.checked === true) {
+        newPizza.size = "large";
+    }
+    if(thin1.checked === true) {
+        newPizza.crust = "thin";
+      }
+      if (original1.checked === true) {
+          newPizza.crust = "original";
+      }
+      if (pan1.checked === true) {
+          newPizza.crust = "pan";
+      }
+      if (pepperoni1.checked === true) {
+        toppingsArray.push("pepperoni");
+      }
+      if (sausage1.checked === true) {
+        toppingsArray.push("sausage");
+      }
+      if (mushroom1.checked === true) {
+        toppingsArray.push("mushroom");
+      }
+
+      let newPizzaString = JSON.stringify(newPizza);
+      localStorage.setItem("Pizza1", newPizzaString);
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

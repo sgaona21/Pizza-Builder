@@ -13,20 +13,20 @@
 <body>
     <h1>Pizza Builder</h1>
         <h2>Create New Pizza</h2>
-            <form>
-                <h3>Size:</h2>
-                    <div>
-                    <input type="radio" id="small" value="small" name="size">
-                    <label for="small">Small</label>
-                    </div>
-                    <div>
-                    <input type="radio" id="medium" value="pizza_medium" name="size">
-                    <label for="medium">Medium</label>
-                    </div>
-                    <div>
-                    <input type="radio" id="large" value="pizza_large" name="size">
-                    <label for="large">Large</label>
-                    </div>
+                <form>
+                    <h3>Size:</h2>
+                        <div>
+                        <input type="radio" id="small" value="small" name="size">
+                        <label for="small">Small</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="medium" value="pizza_medium" name="size">
+                        <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="large" value="pizza_large" name="size">
+                        <label for="large">Large</label>
+                        </div>
 
                     <h3>Crust:</h2>
                         <div>
@@ -62,9 +62,64 @@
 
         <h2 id="mypizzas">My Pizzas</h2> 
 
-        <div id="my-pizzas">
-        
-        </div>
+            <div id="pizza-1">
+                <h4 id="pizza-1-h4"></h4>
+                <p id="pizza-1-p"></p>
+                <form id="pizza-1-form">
+                    <h3>Size:</h2>
+                        <div>
+                        <input type="radio" id="small1" value="small" name="size1">
+                        <label for="small1">Small</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="medium1" value="pizza_medium" name="size1">
+                        <label for="medium1">Medium</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="large1" value="pizza_large" name="size1">
+                        <label for="large1">Large</label>
+                        </div>
+
+                    <h3>Crust:</h2>
+                        <div>
+                        <input type="radio" id="thin1" value="thin_crust" name="crust1">
+                        <label for="thin1">Thin</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="original1" value="crust_original" name="crust1">
+                        <label for="original1">Original</label>
+                        </div>
+                        <div>
+                        <input type="radio" id="pan1" value="crust_pan" name="crust1">
+                        <label for="pan1">Pan</label>
+                        </div>
+
+                    <h3>Toppings:</h2>
+                        <div>
+                        <input type="checkbox" id="pepperoni1" value="topping_pepperoni" name="toppings1">
+                        <label for="pepperoni1">Pepperoni</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="sausage1" value="topping_sausage" name="toppings1">
+                        <label for="sausage1">Sausage</label>
+                        </div>
+                        <div>
+                        <input type="checkbox" id="mushroom1" value="topping_mushroom" name="toppings1">
+                        <label for="mushroom1">Mushroom</label>
+                        </div>    
+
+                        <input type="submit" id="save-1" value="Save Changes">
+                </form>
+                <button id="pizza-1-edit">Edit</button>
+                <button id="pizza-1-delete">Delete</button>
+            </div>
+
+            <div id="my-pizzas">
+                <h4></h4>
+                <p></p>
+                <button></button>
+                <button></button>
+            </div>
 
 
         <script src="app.js"></script>
