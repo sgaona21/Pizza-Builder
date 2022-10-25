@@ -81,6 +81,11 @@ mySavedPizzas.appendChild(pizzaType);
 mySavedPizzas.appendChild(editButton)
 mySavedPizzas.appendChild(deleteButton);
 
+deleteButton.addEventListener("click", () => {
+    localStorage.removeItem("newPizza");
+    window.location.reload();
+})
+
 
 
 
