@@ -115,9 +115,6 @@ form.addEventListener("submit", (e) => {
     }
     
 
-
-
-
     else if (!currentStorage.includes("secondPizza")) {
       secondPizza.toppings = toppingsArray2;
     if (small.checked === false && medium.checked === false && large.checked === false) {
@@ -164,11 +161,6 @@ form.addEventListener("submit", (e) => {
     }
     
     }
-    
-
-
-
-
 
 
     else if (!currentStorage.includes("thirdPizza")) {
@@ -507,5 +499,3 @@ if (!currentStorage.includes("Pizza1") || !currentStorage.includes("secondPizza"
   pizza3h4.textContent = "Pizza 1"
 }
 
-console.log(duplicateTracker)
-console.log(localStorage)
