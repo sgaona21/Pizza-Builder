@@ -14,3 +14,6 @@
 
 
         "Pizza1"
+
+
+        for  duplicates = we want it in the local storage but dont want it to display 

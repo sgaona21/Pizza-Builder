@@ -167,8 +167,9 @@ form.addEventListener("submit", (e) => {
     let secondPizzaString = JSON.stringify(secondPizza);
     localStorage.setItem("secondPizza", secondPizzaString);
     }
-
+    
     }
+    
 
 
 
@@ -235,6 +236,7 @@ if (localStorage.Pizza1 != null) {
   pizza1p.textContent = `${pizza1Conversion.size}, ${pizza1Conversion.crust}, ${pizza1Conversion.toppings}`;
   pizzaCounter +=1;
   duplicateTracker.push(pizza1p.textContent)
+  
 };
 
 
@@ -319,12 +321,12 @@ pizza1SaveButton.addEventListener("click", (e) => {
 
 ///// PIZZA 2 /////
 if (localStorage.secondPizza != null) {
-  
   pizza2.style.display = "block";
   pizza2h4.textContent = "Pizza 2";
   pizza2p.textContent = `${pizza2Conversion.size}, ${pizza2Conversion.crust}, ${pizza2Conversion.toppings}`;
   pizzaCounter +=1;
   duplicateTracker.push(pizza2p.textContent)
+  
 };
 
 pizza2DeleteButton.addEventListener("click", () => {
@@ -401,6 +403,7 @@ pizza2SaveButton.addEventListener("click", (e) => {
   }
   let secondPizzaString = JSON.stringify(secondPizza);
   localStorage.setItem("secondPizza", secondPizzaString);
+
 });
 
 if (!currentStorage.includes("Pizza1")) {
@@ -500,6 +503,10 @@ if (!currentStorage.includes("Pizza1") || !currentStorage.includes("secondPizza"
 }
 
 
+
+
 console.log(pizzaCounter)
 console.log(duplicateTracker)
 console.log(localStorage)
+
+console.log(duplicateTracker.includes(pizza2p.textContent))
