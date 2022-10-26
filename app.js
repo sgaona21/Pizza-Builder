@@ -326,7 +326,11 @@ if (localStorage.secondPizza != null) {
   pizza2p.textContent = `${pizza2Conversion.size}, ${pizza2Conversion.crust}, ${pizza2Conversion.toppings}`;
   pizzaCounter +=1;
   duplicateTracker.push(pizza2p.textContent)
-  
+  if (localStorage.Pizza1 === localStorage.secondPizza) {
+    alert("Oops! You created a duplicate pizza. Duplicate pizzas arent allowed. Please create a new Pizza");
+    localStorage.removeItem("secondPizza")
+    pizza2.style.display = "none"
+  }
 };
 
 pizza2DeleteButton.addEventListener("click", () => {
