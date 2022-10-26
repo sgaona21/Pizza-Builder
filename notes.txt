@@ -8,3 +8,9 @@
             <button>Edit</button>
             <button>Delete</button>
         </div>
+
+
+        "Oops! You created a duplicate pizza. Duplicate pizzas arent allowed. Please create a new Pizza")
+
+
+        "Pizza1"

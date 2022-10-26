@@ -42,7 +42,7 @@ const pizza3DeleteButton = document.getElementById("pizza-3-delete");
 const pizza3Form = document.getElementById("pizza-3-form");
 const pizza3SaveButton = document.getElementById("save-3");
 
-
+let currentStorage = JSON.stringify(localStorage);
 
 
 class Pizza {
@@ -54,6 +54,7 @@ class Pizza {
 };
 
 let pizzaCounter = 0;
+let duplicateTracker = [];
 
 let newPizza  = new Pizza(null, null, null);
 let toppingsArray = [];
@@ -67,9 +68,12 @@ let toppingsArray3 = [];
 
 
 
+console.log(currentStorage.includes("Pizza1"))
+
+
 form.addEventListener("submit", (e) => {
     // // e.preventDefault();
-    if (pizzaCounter === 0) {
+    if (!currentStorage.includes("Pizza1")) {
     newPizza.toppings = toppingsArray;
     if (small.checked === false && medium.checked === false && large.checked === false) {
       alert("Please Select a Size");
@@ -115,7 +119,11 @@ form.addEventListener("submit", (e) => {
     }
     }
     
-    else if (pizzaCounter === 1) {
+
+
+
+
+    else if (!currentStorage.includes("secondPizza")) {
       secondPizza.toppings = toppingsArray2;
     if (small.checked === false && medium.checked === false && large.checked === false) {
       alert("Please Select a Size");
@@ -159,10 +167,15 @@ form.addEventListener("submit", (e) => {
     let secondPizzaString = JSON.stringify(secondPizza);
     localStorage.setItem("secondPizza", secondPizzaString);
     }
+
     }
 
 
-    else if (pizzaCounter === 2) {
+
+
+
+
+    else if (!currentStorage.includes("thirdPizza")) {
       thirdPizza.toppings = toppingsArray3;
     if (small.checked === false && medium.checked === false && large.checked === false) {
       alert("Please Select a Size");
@@ -209,8 +222,6 @@ form.addEventListener("submit", (e) => {
     }
     
     
-    
-    
     else {
       alert("You have reached the maximum number of pizzas. Please upgrade to the full version to unlock unlimited Pizzas")
     }
@@ -223,6 +234,7 @@ if (localStorage.Pizza1 != null) {
   pizza1h4.textContent = "Pizza 1";
   pizza1p.textContent = `${pizza1Conversion.size}, ${pizza1Conversion.crust}, ${pizza1Conversion.toppings}`;
   pizzaCounter +=1;
+  duplicateTracker.push(pizza1p.textContent)
 };
 
 
@@ -307,10 +319,12 @@ pizza1SaveButton.addEventListener("click", (e) => {
 
 ///// PIZZA 2 /////
 if (localStorage.secondPizza != null) {
+  
   pizza2.style.display = "block";
   pizza2h4.textContent = "Pizza 2";
   pizza2p.textContent = `${pizza2Conversion.size}, ${pizza2Conversion.crust}, ${pizza2Conversion.toppings}`;
   pizzaCounter +=1;
+  duplicateTracker.push(pizza2p.textContent)
 };
 
 pizza2DeleteButton.addEventListener("click", () => {
@@ -389,6 +403,10 @@ pizza2SaveButton.addEventListener("click", (e) => {
   localStorage.setItem("secondPizza", secondPizzaString);
 });
 
+if (!currentStorage.includes("Pizza1")) {
+  pizza2h4.textContent = "Pizza 1"
+}
+
 
 ///// PIZZA 3 /////
 if (localStorage.thirdPizza != null) {
@@ -396,6 +414,7 @@ if (localStorage.thirdPizza != null) {
   pizza3h4.textContent = "Pizza 3";
   pizza3p.textContent = `${pizza3Conversion.size}, ${pizza3Conversion.crust}, ${pizza3Conversion.toppings}`;
   pizzaCounter +=1;
+  duplicateTracker.push(pizza3p.textContent)
 };
 
 pizza3DeleteButton.addEventListener("click", () => {
@@ -474,5 +493,13 @@ pizza3SaveButton.addEventListener("click", (e) => {
   localStorage.setItem("thirdPizza", thirdPizzaString);
 });
 
+if (!currentStorage.includes("Pizza1") || !currentStorage.includes("secondPizza")) {
+  pizza3h4.textContent = "Pizza 2"
+} if (!currentStorage.includes("Pizza1") && !currentStorage.includes("secondPizza")) {
+  pizza3h4.textContent = "Pizza 1"
+}
 
+
+console.log(pizzaCounter)
+console.log(duplicateTracker)
 console.log(localStorage)
