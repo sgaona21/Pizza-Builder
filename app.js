@@ -1,4 +1,3 @@
-console.log("js linked")
 
 ///// VARIABLES /////
 const form = document.querySelector("form");
@@ -306,6 +305,10 @@ pizza1SaveButton.addEventListener("click", (e) => {
 });
 
 
+
+
+
+
 ///// PIZZA 2 /////
 if (localStorage.secondPizza != null) {
   pizza2.style.display = "block";
@@ -401,6 +404,11 @@ pizza2SaveButton.addEventListener("click", (e) => {
 if (!currentStorage.includes("Pizza1")) {
   pizza2h4.textContent = "Pizza 1"
 }
+
+
+
+
+
 
 
 ///// PIZZA 3 /////
