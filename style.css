@@ -29,3 +29,56 @@
 #pizza-3-form {
    display: none;
 }
+
+
+h1 {
+    text-align: center;
+    padding: 1rem;
+    background-color: lightgray;
+}
+
+.side-a {
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 70%;
+    margin: 1rem auto 1rem;
+  
+
+}
+
+.side-b {
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 70%;
+    margin: 1rem auto 1rem;
+
+}
+
+button, #save, #save-1, #save-2, #save-3 {
+    padding: .2rem .3rem;
+    border-radius: 5px;
+    border: 1px solid black; 
+    min-width: 50px;
+}
+
+
+h4, h3 {
+    margin-top: 1.5rem;
+}
+
+p {
+    padding: .25rem 0;
+}
+
+button:hover, #save:hover, #save-1:hover, #save-2:hover, #save-3:hover {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 480px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+  }

@@ -66,11 +66,6 @@ let thirdPizza = new Pizza(null, null, null);
 let toppingsArray3 = [];
 
 
-
-
-console.log(currentStorage.includes("Pizza1"))
-
-
 form.addEventListener("submit", (e) => {
     // // e.preventDefault();
     if (!currentStorage.includes("Pizza1")) {
@@ -329,8 +324,9 @@ if (localStorage.secondPizza != null) {
   if (localStorage.Pizza1 === localStorage.secondPizza) {
     alert("Oops! You created a duplicate pizza. Duplicate pizzas arent allowed. Please create a new Pizza");
     localStorage.removeItem("secondPizza")
-    pizza2.style.display = "none"
+    location.reload();
   }
+ 
 };
 
 pizza2DeleteButton.addEventListener("click", () => {
@@ -422,6 +418,11 @@ if (localStorage.thirdPizza != null) {
   pizza3p.textContent = `${pizza3Conversion.size}, ${pizza3Conversion.crust}, ${pizza3Conversion.toppings}`;
   pizzaCounter +=1;
   duplicateTracker.push(pizza3p.textContent)
+  if (localStorage.thirdPizza === localStorage.Pizza1 || localStorage.thirdPizza === localStorage.secondPizza) {
+    alert("Oops! You created a duplicate pizza. Duplicate pizzas arent allowed. Please create a new Pizza");
+    localStorage.removeItem("thirdPizza")
+    location.reload();
+  }
 };
 
 pizza3DeleteButton.addEventListener("click", () => {
@@ -506,11 +507,5 @@ if (!currentStorage.includes("Pizza1") || !currentStorage.includes("secondPizza"
   pizza3h4.textContent = "Pizza 1"
 }
 
-
-
-
-console.log(pizzaCounter)
 console.log(duplicateTracker)
 console.log(localStorage)
-
-console.log(duplicateTracker.includes(pizza2p.textContent))
