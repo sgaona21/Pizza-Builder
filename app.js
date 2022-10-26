@@ -17,12 +17,14 @@ const mySavedPizzas = document.getElementById("my-pizzas")
 const pizza1 = document.getElementById("pizza-1");
 const pizza1h4 = document.getElementById("pizza-1-h4");
 const pizza1p = document.getElementById("pizza-1-p");
-const pizza1Storage = JSON.parse(localStorage.getItem("newPizza"))
+const pizza1Storage = JSON.parse(localStorage.getItem("newPizza"));
 const pizza1Form = document.getElementById("pizza-1-form");
 const pizza1SaveButton = document.getElementById("save-1");
 let pizza1Conversion = JSON.parse(localStorage.getItem("Pizza1"));
 const pizza1EditButton = document.getElementById("pizza-1-edit");
 const pizza1DeleteButton = document.getElementById("pizza-1-delete");
+
+
 
 
 class Pizza {
@@ -31,14 +33,13 @@ class Pizza {
         this.crust = crust;
         this.toppings = toppings;
     }
-}
+};
 
 
 let newPizza  = new Pizza(null, null, null);
 let toppingsArray = [];
 let secondPizza = new Pizza(null, null, null);
 let toppingsArray2 = [];
-
 
 
 
@@ -87,9 +88,10 @@ form.addEventListener("submit", (e) => {
     }
     let newPizzaString = JSON.stringify(newPizza);
     localStorage.setItem("Pizza1", newPizzaString);
-    
+
 }
 });
+
 
 
 if (localStorage.Pizza1 != null) {
@@ -176,3 +178,4 @@ pizza1SaveButton.addEventListener("click", (e) => {
 
 
 
+console.log(localStorage)
